@@ -105,7 +105,7 @@ static NSString *reusedId = @"reusedId";
     
     
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"这在github上是 develop 分支内容";
+        cell.textLabel.text = @"这在github上是 release 分支内容";
     }
     
     return cell;
