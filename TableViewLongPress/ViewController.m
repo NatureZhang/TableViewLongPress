@@ -79,7 +79,11 @@ static NSString *reusedId = @"reusedId";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reusedId];
+    
+    
     cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    
+    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"testImage@2x" ofType:@"png"];
     //set image and text
     cell.imageView.image = [UIImage imageWithContentsOfFile:filePath];
@@ -94,6 +98,16 @@ static NSString *reusedId = @"reusedId";
     
     cell.layer.shouldRasterize = YES;
     cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    
+    
+    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+    cell.selectedBackgroundView.backgroundColor = [UIColor redColor];
+    
+    
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"这在github上是 master 分支内容";
+    }
+    
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
