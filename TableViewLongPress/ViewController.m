@@ -108,6 +108,14 @@ static NSString *reusedId = @"reusedId";
         cell.textLabel.text = @"这在github上是 release 分支内容";
     }
     
+    if (DEBUG) {
+        cell.textLabel.text = @"debug 模式";
+    }
+    else {
+        cell.textLabel.text = @"release 模式";
+    }
+    
+    
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
