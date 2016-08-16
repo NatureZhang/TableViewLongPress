@@ -108,13 +108,11 @@ static NSString *reusedId = @"reusedId";
         cell.textLabel.text = @"这在github上是 release 分支内容";
     }
     
-    if (DEBUG) {
+    #if DEBUG
         cell.textLabel.text = @"debug 模式";
-    }
-    else {
+    #else
         cell.textLabel.text = @"release 模式";
-    }
-    
+    #endif
     
     return cell;
 }
