@@ -104,9 +104,6 @@ static NSString *reusedId = @"reusedId";
     cell.selectedBackgroundView.backgroundColor = [UIColor redColor];
     
     
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"这在github上是 release 分支内容";
-    }
     
     #if DEBUG
         cell.textLabel.text = @"debug 模式";
@@ -114,6 +111,10 @@ static NSString *reusedId = @"reusedId";
         cell.textLabel.text = @"release 模式";
     #endif
     
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"这在github上是 release 分支内容";
+    }
+
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
