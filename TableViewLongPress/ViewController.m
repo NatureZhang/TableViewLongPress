@@ -40,6 +40,8 @@ typedef enum : NSUInteger {
     NSLog(@"%@", dic);
     NSLog(@"%@", [dic objectForKey:string]);
     
+    
+    // 测试一下 git pull
 }
 
 - (void)didReceiveMemoryWarning {
