@@ -6,14 +6,23 @@
 //  Copyright © 2016年 zhangdong. All rights reserved.
 //
 
+
 #import "ViewController.h"
 #import "MyTableViewCell.h"
 static NSString *reusedId = @"reusedId";
+
+typedef enum : NSUInteger {
+    ViewController1,
+    ViewController2
+} ViewControllerEnum;
+
 @interface ViewController ()
 <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, assign) ViewControllerEnum enuma;
 @end
+
 
 @implementation ViewController
 
@@ -21,6 +30,15 @@ static NSString *reusedId = @"reusedId";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self layoutContentView];
+    self.enuma = ViewController2;
+    
+    NSString *string = [NSString stringWithFormat:@"张东\"%@\"zhangdong", @"Nature"];
+    NSDictionary *dic = @{
+                          string: @"hkdfalsdjkflasdk"
+                          };
+    
+    NSLog(@"%@", dic);
+    NSLog(@"%@", [dic objectForKey:string]);
     
 }
 
